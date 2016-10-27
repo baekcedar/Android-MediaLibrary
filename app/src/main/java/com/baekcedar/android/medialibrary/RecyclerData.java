@@ -9,5 +9,6 @@ public class RecyclerData {
     String artist;
     String albumId;
     String musicId;
+    int image;
 
 }

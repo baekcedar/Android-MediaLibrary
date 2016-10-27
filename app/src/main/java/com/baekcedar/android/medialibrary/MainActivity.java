@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public  ArrayList<RecyclerData> datas = null;
-    private final static int REQUEST_CODE =100 ; //
+    private final static int REQUEST_CODE =100 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 MediaStore.Audio.Media.ALBUM_ID,    // 앨범아이디
                 MediaStore.Audio.Media.TITLE,       // 제목
                 MediaStore.Audio.Media.ARTIST,      // 가수
+
         };
         //getContentResolver().query(주소, 검색해올 컴럼명들, 조건절, 조건절에 매핑되는 값, 정렬)
         Cursor cursor = getContentResolver().query(
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                  data.albumId = cursor.getString(idx);
                  idx = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
                  data.musicId = cursor.getString(idx);
+
                  datas.add(data);
              }
               cursor.close(); // *반드시 종료*
